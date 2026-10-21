@@ -14,7 +14,6 @@
             <span class="home-curtain-reveal__swag home-curtain-reveal__swag--outer"></span>
         </div>
     </div>
-    <button class="home-curtain-toggle" type="button" data-home-curtain-toggle aria-pressed="true">Close curtains</button>
     @php
         $homeDefaults = array_filter(
             config('cms.defaults', []),
@@ -92,24 +91,25 @@
                         <div class="home-demo-live__notch" aria-hidden="true"></div>
                         <div class="home-demo-live__phone-top"><span>9:41</span><span aria-hidden="true">● ● ●</span></div>
                         <div class="home-demo-live__hero">
-                            <p>Good evening</p>
+                            <p>Welcome home</p>
                             <h3>Living Room</h3>
                             <div class="home-demo-live__metrics"><span><b>24°</b><small>TEMP</small></span><span><b>52%</b><small>HUM</small></span><span><b>94</b><small>AQI</small></span></div>
                         </div>
                         <div class="home-demo-live__content">
-                            <p class="home-demo-live__summary"><span data-demo-count>2</span> of 4 lights on <b data-demo-mood>Cozy evening</b></p>
+                            <p class="home-demo-live__summary"><span data-demo-count>2</span> of 5 lights on <b data-demo-mood>Cozy evening</b></p>
                             <div class="home-demo-live__lights">
                                 <button class="home-demo-live__light" type="button" data-demo-room="living" aria-pressed="true"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Living Room</b><small>On</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
-                                <button class="home-demo-live__light" type="button" data-demo-room="kitchen" aria-pressed="true"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Kitchen</b><small>On</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
+                                <button class="home-demo-live__light" type="button" data-demo-room="hall" aria-pressed="true"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Hall</b><small>On</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
                                 <button class="home-demo-live__light" type="button" data-demo-room="bedroom" aria-pressed="false"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Bedroom</b><small>Off</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
                                 <button class="home-demo-live__light" type="button" data-demo-room="parking" aria-pressed="false"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Car Parking</b><small>Off</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
+                                <button class="home-demo-live__light" type="button" data-demo-room="garden" aria-pressed="false"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Garden</b><small>Off</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
                             </div>
                             <button class="home-demo-live__master" type="button" data-demo-master>Turn all lights on</button>
                         </div>
                     </div>
                 </div>
                 <div class="home-demo-live__scene">
-                    <img src="{{ asset('images/home/virtual-demo/living-kitchen-lit.png') }}" alt="Smart home with the living room and kitchen lights on" data-demo-house>
+                    <img src="{{ asset('images/home/virtual-demo/living-kitchen-lit.webp') }}" alt="Smart home with the living room and hall lights on" data-demo-house>
                     <p class="visually-hidden" aria-live="polite" data-demo-status>Tap a room switch to control its lights.</p>
                 </div>
             </div>

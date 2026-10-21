@@ -6832,32 +6832,6 @@ body.has-brochure-modal {
     transform: rotate(9deg);
 }
 
-.home-page .home-curtain-toggle {
-    position: fixed;
-    z-index: 10000;
-    right: 18px;
-    bottom: 18px;
-    padding: 10px 16px;
-    border: 1px solid #dfc36e;
-    border-radius: 999px;
-    background: rgb(255 251 235 / 96%);
-    box-shadow: 0 5px 18px rgb(65 38 48 / 18%);
-    color: #725719;
-    cursor: pointer;
-    font: 600 13px/1.2 'Instrument Sans', Arial, sans-serif;
-    transition: background-color .2s ease, transform .2s ease;
-}
-
-.home-page .home-curtain-toggle:hover {
-    transform: translateY(-2px);
-    background: #fff;
-}
-
-.home-page .home-curtain-toggle:focus-visible {
-    outline: 3px solid #bd9635;
-    outline-offset: 3px;
-}
-
 .home-page .home-curtain-reveal.is-closed .home-curtain-reveal__panel--left {
     animation: home-curtain-close-left 1s cubic-bezier(.62, 0, .35, 1) both;
 }
@@ -6891,9 +6865,6 @@ body.has-brochure-modal {
         display: none;
     }
 
-    .home-page .home-curtain-toggle {
-        display: none;
-    }
 }
 
 .home-page main {
@@ -7130,6 +7101,7 @@ body.has-brochure-modal {
 
 .home-demo-live__hero {
     position: relative;
+    flex: 0 0 auto;
     margin: 0 -15px;
     padding: 48px 20px 18px;
     overflow: hidden;
@@ -7193,9 +7165,12 @@ body.has-brochure-modal {
 
 .home-demo-live__content {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
     flex-direction: column;
-    padding-top: 18px;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+    padding-top: 12px;
 }
 
 .home-demo-live__summary {
@@ -7203,7 +7178,8 @@ body.has-brochure-modal {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 4px 8px;
-    margin: 0 0 10px;
+    flex: 0 0 auto;
+    margin: 0 0 4px;
     color: #77756d;
     font-size: 11px;
 }
@@ -7215,19 +7191,20 @@ body.has-brochure-modal {
 .home-demo-live__lights {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 8px;
-    flex: 1;
-    align-content: start;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    min-height: 0;
+    margin-top: 4px;
+    flex: 1 1 0;
 }
 
 .home-demo-live__light {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 25px 1fr 13px;
+    grid-template-columns: minmax(0, 1fr) 37px;
+    grid-template-rows: 22px 1fr auto;
     gap: 3px;
-    min-height: 118px;
-    padding: 13px;
+    min-height: 0;
+    padding: 9px 10px;
     border: 1px solid #e1dfd9;
     border-radius: 13px;
     background: #fff;
@@ -7266,8 +7243,8 @@ body.has-brochure-modal {
 }
 
 .home-demo-live__light b {
-    font-size: 14px;
-    white-space: nowrap;
+    font-size: 13px;
+    overflow-wrap: anywhere;
 }
 
 .home-demo-live__light small {
@@ -7282,6 +7259,7 @@ body.has-brochure-modal {
     display: flex;
     align-items: center;
     width: 37px;
+    justify-self: end;
     height: 22px;
     padding: 3px;
     border: 1px solid #dededb;
@@ -7309,8 +7287,9 @@ body.has-brochure-modal {
 
 .home-demo-live__master {
     width: 100%;
-    margin-top: auto;
-    padding: 14px;
+    flex: 0 0 auto;
+    margin-top: 8px;
+    padding: 12px;
     border: 0;
     border-radius: 10px;
     background: #efbf2c;
@@ -10480,8 +10459,8 @@ body.product-catalog-page.product-catalog-page--smart-security-systems .door-int
 
     .home-demo-live__phone {
         width: min(100%, 340px);
-        height: min(680px, calc(100svh - 36px));
-        min-height: 590px;
+        height: min(680px, calc(100svh - 48px));
+        min-height: min(590px, calc(100svh - 48px));
         align-self: center;
     }
 

@@ -1,18 +1,3 @@
-document.querySelectorAll('[data-home-curtain-toggle]').forEach((button) => {
-    const curtains = document.querySelector('.home-curtain-reveal');
-
-    if (!curtains) {
-        return;
-    }
-
-    button.addEventListener('click', () => {
-        const isClosed = curtains.classList.toggle('is-closed');
-
-        button.textContent = isClosed ? 'Open curtains' : 'Close curtains';
-        button.setAttribute('aria-pressed', String(!isClosed));
-    });
-});
-
 document.querySelectorAll('[data-curtain-motion]').forEach((stage) => {
     const slider = stage.parentElement.querySelector('.curtain-motion__slider');
 
@@ -76,30 +61,47 @@ document.querySelectorAll('[data-home-demo]').forEach((demo) => {
     const moodLabel = demo.querySelector('[data-demo-mood]');
     const masterButton = demo.querySelector('[data-demo-master]');
     const statusLabel = demo.querySelector('[data-demo-status]');
-    const rooms = ['living', 'kitchen', 'bedroom', 'parking'];
+    const rooms = ['living', 'hall', 'bedroom', 'parking', 'garden'];
     const images = {
-        '': 'house-unlit.png',
+        '': 'house-unlit.webp',
         living: 'living-room-lit.webp',
-        kitchen: 'kitchen-lit.webp',
+        hall: 'kitchen-lit.webp',
         bedroom: 'house-lit.webp',
         parking: 'parking-lit.webp',
-        'living+kitchen': 'living-kitchen-lit.webp',
+        garden: 'garden-lit.webp',
+        'living+hall': 'living-kitchen-lit.webp',
         'living+bedroom': 'living-bedroom-lit.webp',
         'living+parking': 'living-parking-lit.webp',
-        'kitchen+bedroom': 'kitchen-bedroom-lit.png',
-        'kitchen+parking': 'kitchen-parking-lit.webp',
-        'bedroom+parking': 'bedroom-parking-lit.png',
-        'living+kitchen+bedroom': 'living-kitchen-bedroom-lit.png',
-        'living+kitchen+parking': 'living-kitchen-parking-lit.webp',
+        'living+garden': 'garden-living-room-lit.webp',
+        'hall+bedroom': 'kitchen-bedroom-lit.webp',
+        'hall+parking': 'kitchen-parking-lit.webp',
+        'hall+garden': 'garden-hall-lit.webp',
+        'bedroom+parking': 'bedroom-parking-lit.webp',
+        'bedroom+garden': 'garden-bedroom-lit.webp',
+        'parking+garden': 'garden-parking-lit.webp',
+        'living+hall+bedroom': 'living-kitchen-bedroom-lit.webp',
+        'living+hall+parking': 'living-kitchen-parking-lit.webp',
         'living+bedroom+parking': 'living-bedroom-parking-lit.webp',
-        'kitchen+bedroom+parking': 'kitchen-bedroom-parking-lit.webp',
-        'living+kitchen+bedroom+parking': 'house-all-lights-on.webp',
+        'hall+bedroom+parking': 'kitchen-bedroom-parking-lit.webp',
+        'living+hall+garden': 'garden-living-hall-lit.webp',
+        'living+bedroom+garden': 'garden-living-bedroom-lit.webp',
+        'living+parking+garden': 'garden-living-parking-lit.webp',
+        'hall+bedroom+garden': 'garden-hall-bedroom-lit.webp',
+        'hall+parking+garden': 'garden-hall-parking-lit.webp',
+        'bedroom+parking+garden': 'garden-bedroom-parking-lit.webp',
+        'living+hall+bedroom+parking': 'all-four-lights-on.webp',
+        'living+hall+bedroom+garden': 'garden-living-hall-bedroom-lit.webp',
+        'living+hall+parking+garden': 'garden-living-hall-parking-lit.webp',
+        'living+bedroom+parking+garden': 'garden-living-bedroom-parking-lit.webp',
+        'hall+bedroom+parking+garden': 'garden-hall-bedroom-parking-lit.webp',
+        'living+hall+bedroom+parking+garden': 'house-all-lights-on.webp',
     };
     const roomNames = {
         living: 'living room',
-        kitchen: 'kitchen',
+        hall: 'hall',
         bedroom: 'bedroom',
         parking: 'car parking',
+        garden: 'garden',
     };
 
     if (!houseImage || !masterButton) {
@@ -129,7 +131,7 @@ document.querySelectorAll('[data-home-demo]').forEach((demo) => {
         masterButton.textContent = lightCount === rooms.length ? 'Turn all lights off' : 'Turn all lights on';
         houseImage.src = `${demo.dataset.demoImageBase}/${imageName}`;
         houseImage.alt = `Modern home with ${description}`;
-        statusLabel.textContent = `${lightCount} of 4 lights on · ${mood}`;
+        statusLabel.textContent = `${lightCount} of ${rooms.length} lights on · ${mood}`;
     };
 
     roomButtons.forEach((button) => {
