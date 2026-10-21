@@ -1,3 +1,18 @@
+document.querySelectorAll('[data-home-curtain-toggle]').forEach((button) => {
+    const curtains = document.querySelector('.home-curtain-reveal');
+
+    if (!curtains) {
+        return;
+    }
+
+    button.addEventListener('click', () => {
+        const isClosed = curtains.classList.toggle('is-closed');
+
+        button.textContent = isClosed ? 'Open curtains' : 'Close curtains';
+        button.setAttribute('aria-pressed', String(!isClosed));
+    });
+});
+
 document.querySelectorAll('[data-curtain-motion]').forEach((stage) => {
     const slider = stage.parentElement.querySelector('.curtain-motion__slider');
 

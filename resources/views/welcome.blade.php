@@ -4,6 +4,17 @@
 @section('body-class', 'home-page')
 
 @section('content')
+    <div class="home-curtain-reveal" aria-hidden="true">
+        <div class="home-curtain-reveal__panel home-curtain-reveal__panel--left">
+            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--outer"></span>
+            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--inner"></span>
+        </div>
+        <div class="home-curtain-reveal__panel home-curtain-reveal__panel--right">
+            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--inner"></span>
+            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--outer"></span>
+        </div>
+    </div>
+    <button class="home-curtain-toggle" type="button" data-home-curtain-toggle aria-pressed="true">Close curtains</button>
     @php
         $homeDefaults = array_filter(
             config('cms.defaults', []),
@@ -81,7 +92,7 @@
                         <div class="home-demo-live__notch" aria-hidden="true"></div>
                         <div class="home-demo-live__phone-top"><span>9:41</span><span aria-hidden="true">● ● ●</span></div>
                         <div class="home-demo-live__hero">
-                            <p>Good evening, Ramesh</p>
+                            <p>Good evening</p>
                             <h3>Living Room</h3>
                             <div class="home-demo-live__metrics"><span><b>24°</b><small>TEMP</small></span><span><b>52%</b><small>HUM</small></span><span><b>94</b><small>AQI</small></span></div>
                         </div>
