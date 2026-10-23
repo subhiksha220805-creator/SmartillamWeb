@@ -91,7 +91,7 @@ $smartTouchDefaults = [
     'related_heading' => 'Explore Smart Home Solutions',
     'related_hint' => 'Swipe or scroll to explore all products',
     'consultation_heading' => 'Make Your Home Respond To You',
-    'consultation_primary_button' => 'Contact Us',
+    'consultation_primary_button' => 'Book Consultation',
     'consultation_secondary_button' => 'Request a Site Visit',
     'consultation_image' => 'images/touch-switch/consultation-banner.png',
 ];
@@ -249,7 +249,7 @@ foreach ($products as $slug => $name) {
             ['key' => 'products.smart-touch-switches.hero_title', 'label' => 'Hero heading', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.hero_description', 'label' => 'Hero description', 'type' => 'textarea'],
             ['key' => 'products.smart-touch-switches.hero_image', 'label' => 'Hero image', 'type' => 'image'],
-            ['key' => 'products.smart-touch-switches.hero_primary_button', 'label' => 'Hero primary button', 'type' => 'text'],
+            ['key' => 'products.smart-touch-switches.hero_primary_button', 'label' => 'Hero Book Consultation button text', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.hero_secondary_button', 'label' => 'Hero secondary button', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.intro_eyebrow', 'label' => 'Introduction label', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.intro_title', 'label' => 'Page content heading', 'type' => 'text'],
@@ -283,7 +283,7 @@ foreach ($products as $slug => $name) {
             ['key' => 'products.smart-touch-switches.alt', 'label' => 'Product image description', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.related_hint', 'label' => 'Related products note', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.consultation_heading', 'label' => 'Consultation heading', 'type' => 'text'],
-            ['key' => 'products.smart-touch-switches.consultation_primary_button', 'label' => 'Consultation button text', 'type' => 'text'],
+            ['key' => 'products.smart-touch-switches.consultation_primary_button', 'label' => 'Book Consultation button text', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.consultation_secondary_button', 'label' => 'Site visit button text', 'type' => 'text'],
             ['key' => 'products.smart-touch-switches.consultation_image', 'label' => 'Consultation background image', 'type' => 'image'],
             ['key' => 'products.smart-touch-switches.name', 'label' => 'Product name', 'type' => 'text'],
@@ -299,7 +299,7 @@ foreach ($products as $slug => $name) {
                 'label' => 'Mobile hero image',
                 'type' => 'image',
             ]] : []),
-            ['key' => "products.{$slug}.hero_primary_button", 'label' => 'Hero primary button', 'type' => 'text'],
+            ['key' => "products.{$slug}.hero_primary_button", 'label' => 'Hero Book Consultation button text', 'type' => 'text'],
             ['key' => "products.{$slug}.hero_secondary_button", 'label' => 'Hero secondary button', 'type' => 'text'],
             ...(isset($extendedProductContent[$slug]['intro_eyebrow']) ? [[
                 'key' => "products.{$slug}.intro_eyebrow",
@@ -390,7 +390,7 @@ foreach ($products as $slug => $name) {
             ['key' => "products.{$slug}.alt", 'label' => 'Product image description', 'type' => 'text'],
             ['key' => "products.{$slug}.related_hint", 'label' => 'Related products note', 'type' => 'text'],
             ['key' => "products.{$slug}.consultation_heading", 'label' => 'Consultation heading', 'type' => 'text'],
-            ['key' => "products.{$slug}.consultation_primary_button", 'label' => 'Consultation button text', 'type' => 'text'],
+            ['key' => "products.{$slug}.consultation_primary_button", 'label' => 'Book Consultation button text', 'type' => 'text'],
             ['key' => "products.{$slug}.consultation_secondary_button", 'label' => 'Site visit button text', 'type' => 'text'],
             ['key' => "products.{$slug}.consultation_image", 'label' => 'Consultation background image', 'type' => 'image'],
         ]);
@@ -418,7 +418,7 @@ $productCmsDefaults = [];
 
 foreach ($productIntroDefaults as $slug => $intro) {
     $productCmsDefaults["products.{$slug}.hero_eyebrow"] = 'Premium Ecosystem';
-    $productCmsDefaults["products.{$slug}.hero_primary_button"] = 'Contact Us';
+    $productCmsDefaults["products.{$slug}.hero_primary_button"] = 'Book Consultation';
     $productCmsDefaults["products.{$slug}.hero_secondary_button"] = 'Explore Services';
     $productCmsDefaults["products.{$slug}.intro_title"] = $intro['title'];
     $productCmsDefaults["products.{$slug}.intro_description"] = str_replace('\\n', "\n", $intro['description']);
@@ -466,7 +466,7 @@ foreach (array_keys($productIntroDefaults) as $slug) {
     $productCmsDefaults["products.{$slug}.related_heading"] ??= 'Explore Smart Home Solutions';
     $productCmsDefaults["products.{$slug}.related_hint"] ??= 'Swipe or scroll to explore all products';
     $productCmsDefaults["products.{$slug}.consultation_heading"] ??= 'Make Your Home Respond To You';
-    $productCmsDefaults["products.{$slug}.consultation_primary_button"] ??= 'Contact Us';
+    $productCmsDefaults["products.{$slug}.consultation_primary_button"] ??= 'Book Consultation';
     $productCmsDefaults["products.{$slug}.consultation_secondary_button"] ??= 'Request a Site Visit';
     $productCmsDefaults["products.{$slug}.consultation_image"] ??= 'images/touch-switch/consultation-banner.png';
 }
@@ -518,13 +518,15 @@ return [
         'home.nav_blog' => 'Blog',
         'home.nav_about' => 'About',
         'home.nav_contact' => 'Contact',
-        'home.nav_consultation' => 'Contact Us',
+        'home.nav_consultation' => 'Book Consultation',
+        'home.nav_admin' => 'Admin',
+        'home.page_title' => 'Smart Illam | Intelligent Home Automation',
         'solutions.hero_eyebrow' => 'Smart Solutions',
         'solutions.hero_title' => 'Intelligent Spaces Designed Around Your Lifestyle',
         'solutions.hero_description' => 'Transform your home into a smarter, safer, and more energy-efficient living space with seamless automation powered by Wi-Fi, Zigbee, and Matter protocols.',
         'solutions.hero_image' => 'images/solutions/solutions-hero.png',
         'solutions.hero_image_alt' => 'Contemporary smart living room with integrated home controls',
-        'solutions.hero_primary_button' => 'Contact Us',
+        'solutions.hero_primary_button' => 'Book Consultation',
         'solutions.hero_secondary_button' => 'Explore Services',
         'solutions.intro_title' => "Smart Living Starts with\nIntelligent Solutions",
         'solutions.intro_tagline' => 'Your Trusted Building Solution Provider',
@@ -586,14 +588,14 @@ return [
         'solutions.cta_title' => 'Let’s Design the Perfect Smart Home for You.',
         'solutions.cta_description' => 'Consult with our expert engineers to discover how we can elevate your lifestyle through intelligent technology.',
         'solutions.cta_image' => 'images/solutions/solution-interior.jpg',
-        'solutions.cta_primary_button' => 'Contact Us',
+        'solutions.cta_primary_button' => 'Book Consultation',
         'solutions.cta_secondary_button' => 'Talk to an Expert',
         'services.hero_eyebrow' => 'Smart Solutions',
         'services.page_title' => 'Smart Home Services | Smart Illam',
         'services.hero_title' => "Complete Smart Home Services\nFrom Design to Lifetime Support",
         'services.hero_description' => 'We create bespoke automation ecosystems that blend seamlessly into your home or office, providing effortless control and unparalleled luxury.',
         'services.hero_image' => 'images/services/services-hero.png',
-        'services.hero_primary_button' => 'Contact Us',
+        'services.hero_primary_button' => 'Book Consultation',
         'services.hero_secondary_button' => 'Explore Services',
         'services.approach_eyebrow' => 'The Approach',
         'services.approach_title' => 'Every Detail, Expertly Managed.',
@@ -637,7 +639,7 @@ return [
         'services.faq_items' => "How long does a typical installation take?|Project timelines depend on the size of your property and the systems selected. We share a clear schedule after the site assessment and solution proposal.\nCan you automate an existing home?|Yes. We assess your wiring and existing devices, then recommend compatible solutions that can be installed with minimal disruption.\nIs training provided for the systems?|Yes. After installation and testing, our team walks you through the controls and helps your household feel comfortable using the system.\nDo the systems work without internet?|Core controls can continue to work locally depending on the selected system. Remote access and some connected services require an internet connection.\nAre your solutions compatible with Apple HomeKit?|Compatibility depends on the chosen devices and integration platform. We confirm the supported assistants and protocols during solution planning.\nWhat happens if the power goes out?|Devices resume their configured behavior when power returns. Backup power can be planned for selected network or security equipment where needed.",
         'services.final_cta_title' => "Let’s Create a Home That\nWorks Smarter.",
         'services.final_cta_image' => 'images/services/services-cta.png',
-        'services.final_cta_primary_button' => 'Contact Us',
+        'services.final_cta_primary_button' => 'Book Consultation',
         'services.final_cta_secondary_button' => 'Request a Site Visit',
         'home.hero_eyebrow' => 'Smart Illam',
         'home.hero_title' => "Smart Living Insights &\nHome Automation Guides",
@@ -653,10 +655,6 @@ return [
         'home.demo_eyebrow' => 'See your smart home in action',
         'home.demo_title' => 'Try a Virtual Demo',
         'home.demo_description' => 'Explore how connected controls can make everyday living more comfortable and convenient.',
-        'home.demo_mobile_image' => 'images/home/home-virtual-demo-mobile.svg',
-        'home.demo_mobile_image_alt' => 'Smart Illam mobile app showing living room climate, lighting, blinds and appliance controls',
-        'home.demo_house_image' => 'images/home/home-virtual-demo-house.svg',
-        'home.demo_house_image_alt' => 'Modern illuminated smart home at night',
         'home.promise_title' => 'Our Promise to Your Home',
         'home.promise_description' => 'Creating intelligent living spaces with seamless automation, premium technology, and personalized solutions.',
         'home.promise_voice_image' => 'images/home/home-voice-ai-card.svg',
@@ -738,7 +736,7 @@ return [
         'blog.hero_image_alt' => 'Warm, connected living room overlooking a city at dusk',
         'blog.hero_eyebrow' => 'Smart Illam Journal',
         'blog.hero_articles_button' => 'Explore Articles',
-        'blog.hero_consultation_button' => 'Contact Us',
+        'blog.hero_consultation_button' => 'Book Consultation',
         'blog.topics_section_label' => 'Browse article topics',
         'blog.topics_group_label' => 'Filter articles by topic',
         'blog.topic_all' => 'All Topics',
@@ -774,11 +772,12 @@ return [
         'blog.article_cta_title' => 'Ready to Experience Intelligent Living?',
         'blog.article_cta_description' => 'Whether you’re building a new home or upgrading your existing space, Smart Illam is here to help you embrace the future of connected living.',
         'blog.article_cta_image' => 'images/blog/article-cta.jpg',
-        'blog.article_cta_primary_button' => 'Contact Us',
+        'blog.article_cta_primary_button' => 'Book Consultation',
         'blog.article_cta_secondary_button' => 'Request a Site Visit',
         'brand.name' => 'Smart Illam',
         'brand.tagline' => 'Touch It Feel It',
         'brand.logo' => 'images/smartillam-logo.png',
+        'brand.favicon' => 'images/smartillam-logo.png',
         'about.hero_title' => 'Designing Homes That Think.',
         'about.page_title' => 'About Smart Illam | Intelligent Living',
         'about.hero_eyebrow' => 'About Smart Illam',
@@ -786,7 +785,7 @@ return [
         'about.hero_image' => 'images/about/about-hero.png',
         'about.hero_image_alt' => 'Premium living room with integrated Smart Illam home controls',
         'about.hero_solutions_button' => 'Explore Solutions',
-        'about.hero_consultation_button' => 'Contact Us',
+        'about.hero_consultation_button' => 'Book Consultation',
         'about.intro_title' => 'Smart Illam',
         'about.tagline' => 'Redefining Modern Living',
         'about.intro_text' => 'Smart Illam is a leading provider of intelligent home automation and smart building solutions. We specialize in creating connected environments that combine innovation, security, luxury, and energy efficiency. From consultation to installation and ongoing support, we deliver end-to-end automation solutions tailored to the unique needs of homeowners, businesses, and developers. Every project is designed with precision, ensuring technology integrates naturally into everyday living.',
@@ -806,7 +805,7 @@ return [
         'contact.page_title' => 'Contact Smart Illam | Smart Home Consultation',
         'contact.hero_description' => 'Have questions about smart home automation, security, or connected living? Our team is here to help you find the right solution for your home or business.',
         'contact.hero_image' => 'images/contact/contact-hero.png',
-        'contact.hero_primary_button' => 'Contact Us',
+        'contact.hero_primary_button' => 'Book Consultation',
         'contact.hero_secondary_button' => 'Get Brochure',
         'contact.hero_image_description' => 'Warm, modern living room with smart home controls',
         'contact.brochure_modal_title' => 'Get Our Brochure',
@@ -882,9 +881,11 @@ return [
         'home' => [
             'label' => 'Home',
             'groups' => [
-                ['label' => 'Navigation', 'fields' => [
-                    ['key' => 'brand.logo', 'label' => 'Website logo', 'type' => 'image'],
-                    ['key' => 'brand.name', 'label' => 'Brand name', 'type' => 'text'],
+                ['label' => 'Branding & Navigation', 'fields' => [
+                    ['key' => 'brand.logo', 'label' => 'Website logo (header and footer)', 'type' => 'image'],
+                    ['key' => 'brand.name', 'label' => 'Website / title name', 'type' => 'text'],
+                    ['key' => 'brand.favicon', 'label' => 'Browser tab icon (favicon)', 'type' => 'image'],
+                    ['key' => 'home.page_title', 'label' => 'Home browser tab title', 'type' => 'text'],
                     ['key' => 'home.nav_home', 'label' => 'Home link', 'type' => 'text'],
                     ['key' => 'home.nav_solutions', 'label' => 'Solutions link', 'type' => 'text'],
                     ['key' => 'home.nav_services', 'label' => 'Services link', 'type' => 'text'],
@@ -892,7 +893,8 @@ return [
                     ['key' => 'home.nav_blog', 'label' => 'Blog link', 'type' => 'text'],
                     ['key' => 'home.nav_about', 'label' => 'About link', 'type' => 'text'],
                     ['key' => 'home.nav_contact', 'label' => 'Contact link', 'type' => 'text'],
-                    ['key' => 'home.nav_consultation', 'label' => 'Consultation button', 'type' => 'text'],
+                    ['key' => 'home.nav_consultation', 'label' => 'Book Consultation button text', 'type' => 'text'],
+                    ['key' => 'home.nav_admin', 'label' => 'Admin button text', 'type' => 'text'],
                 ]],
                 ['label' => 'SMART ILLAM Home Automation Guides', 'fields' => [
                     ['key' => 'home.hero_eyebrow', 'label' => 'Eyebrow', 'type' => 'text'],
@@ -911,10 +913,6 @@ return [
                     ['key' => 'home.demo_eyebrow', 'label' => 'Eyebrow', 'type' => 'text'],
                     ['key' => 'home.demo_title', 'label' => 'Heading', 'type' => 'text'],
                     ['key' => 'home.demo_description', 'label' => 'Description', 'type' => 'textarea'],
-                    ['key' => 'home.demo_mobile_image', 'label' => 'Mobile demo image', 'type' => 'image'],
-                    ['key' => 'home.demo_mobile_image_alt', 'label' => 'Mobile demo image description', 'type' => 'text'],
-                    ['key' => 'home.demo_house_image', 'label' => 'Smart home demo image', 'type' => 'image'],
-                    ['key' => 'home.demo_house_image_alt', 'label' => 'Smart home demo image description', 'type' => 'text'],
                 ]],
                 ['label' => 'Our Promise to Your Home', 'fields' => [
                     ['key' => 'home.promise_title', 'label' => 'Heading', 'type' => 'text'],
@@ -1019,7 +1017,7 @@ return [
                     ['key' => 'solutions.hero_description', 'label' => 'Introduction', 'type' => 'textarea'],
                     ['key' => 'solutions.hero_image', 'label' => 'Hero image', 'type' => 'image'],
                     ['key' => 'solutions.hero_image_alt', 'label' => 'Hero image description', 'type' => 'text'],
-                    ['key' => 'solutions.hero_primary_button', 'label' => 'Consultation button', 'type' => 'text'],
+                    ['key' => 'solutions.hero_primary_button', 'label' => 'Hero Book Consultation button text', 'type' => 'text'],
                     ['key' => 'solutions.hero_secondary_button', 'label' => 'Explore button', 'type' => 'text'],
                 ]],
                 ['label' => 'Smart Living Starts with Intelligent Solutions', 'fields' => [
@@ -1057,7 +1055,7 @@ return [
                     ['key' => 'solutions.commercial_title', 'label' => 'Commercial card title', 'type' => 'text'], ['key' => 'solutions.commercial_image', 'label' => 'Commercial image', 'type' => 'image'],
                 ]],
                 ['label' => 'Let’s Design the Perfect Smart Home for You.', 'fields' => [
-                    ['key' => 'solutions.cta_title', 'label' => 'Heading', 'type' => 'text'], ['key' => 'solutions.cta_description', 'label' => 'Description', 'type' => 'textarea'], ['key' => 'solutions.cta_image', 'label' => 'Background image', 'type' => 'image'], ['key' => 'solutions.cta_primary_button', 'label' => 'Consultation button', 'type' => 'text'], ['key' => 'solutions.cta_secondary_button', 'label' => 'Call button', 'type' => 'text'],
+                    ['key' => 'solutions.cta_title', 'label' => 'Heading', 'type' => 'text'], ['key' => 'solutions.cta_description', 'label' => 'Description', 'type' => 'textarea'], ['key' => 'solutions.cta_image', 'label' => 'Background image', 'type' => 'image'], ['key' => 'solutions.cta_primary_button', 'label' => 'Book Consultation button text', 'type' => 'text'], ['key' => 'solutions.cta_secondary_button', 'label' => 'Call button', 'type' => 'text'],
                 ]],
             ],
         ],
@@ -1068,7 +1066,7 @@ return [
                     ['key' => 'services.page_title', 'label' => 'Browser page title', 'type' => 'text'],
                 ]],
                 ['label' => 'Complete Smart Home Services', 'fields' => [
-                    ['key' => 'services.hero_eyebrow', 'label' => 'Eyebrow', 'type' => 'text'], ['key' => 'services.hero_title', 'label' => 'Page heading', 'type' => 'textarea'], ['key' => 'services.hero_description', 'label' => 'Introduction', 'type' => 'textarea'], ['key' => 'services.hero_image', 'label' => 'Hero background image', 'type' => 'image'], ['key' => 'services.hero_primary_button', 'label' => 'Consultation button', 'type' => 'text'], ['key' => 'services.hero_secondary_button', 'label' => 'Explore button', 'type' => 'text'],
+                    ['key' => 'services.hero_eyebrow', 'label' => 'Eyebrow', 'type' => 'text'], ['key' => 'services.hero_title', 'label' => 'Page heading', 'type' => 'textarea'], ['key' => 'services.hero_description', 'label' => 'Introduction', 'type' => 'textarea'], ['key' => 'services.hero_image', 'label' => 'Hero background image', 'type' => 'image'], ['key' => 'services.hero_primary_button', 'label' => 'Hero Book Consultation button text', 'type' => 'text'], ['key' => 'services.hero_secondary_button', 'label' => 'Explore button', 'type' => 'text'],
                 ]],
                 ['label' => 'The Approach', 'fields' => [
                     ['key' => 'services.approach_eyebrow', 'label' => 'Eyebrow', 'type' => 'text'], ['key' => 'services.approach_title', 'label' => 'Heading', 'type' => 'text'], ['key' => 'services.approach_description', 'label' => 'Description', 'type' => 'textarea'], ['key' => 'services.approach_points', 'label' => 'Highlights (one per line)', 'type' => 'textarea'], ['key' => 'services.approach_image', 'label' => 'Approach image', 'type' => 'image'], ['key' => 'services.approach_image_alt', 'label' => 'Approach image description', 'type' => 'text'],
@@ -1090,7 +1088,7 @@ return [
                     ['key' => 'services.faq_eyebrow', 'label' => 'Eyebrow', 'type' => 'text'], ['key' => 'services.faq_title', 'label' => 'Heading', 'type' => 'text'], ['key' => 'services.faq_items', 'label' => 'Questions and answers (question|answer, one per line)', 'type' => 'textarea'],
                 ]],
                 ['label' => 'Final Call to Action', 'fields' => [
-                    ['key' => 'services.final_cta_title', 'label' => 'Heading', 'type' => 'textarea'], ['key' => 'services.final_cta_image', 'label' => 'Background image', 'type' => 'image'], ['key' => 'services.final_cta_primary_button', 'label' => 'Consultation button', 'type' => 'text'], ['key' => 'services.final_cta_secondary_button', 'label' => 'Site visit button', 'type' => 'text'],
+                    ['key' => 'services.final_cta_title', 'label' => 'Heading', 'type' => 'textarea'], ['key' => 'services.final_cta_image', 'label' => 'Background image', 'type' => 'image'], ['key' => 'services.final_cta_primary_button', 'label' => 'Book Consultation button text', 'type' => 'text'], ['key' => 'services.final_cta_secondary_button', 'label' => 'Site visit button', 'type' => 'text'],
                 ]],
             ],
         ],
@@ -1111,7 +1109,7 @@ return [
                         ['key' => 'blog.hero_image_alt', 'label' => 'Hero image description', 'type' => 'text'],
                         ['key' => 'blog.hero_eyebrow', 'label' => 'Hero eyebrow', 'type' => 'text'],
                         ['key' => 'blog.hero_articles_button', 'label' => 'Hero articles button', 'type' => 'text'],
-                        ['key' => 'blog.hero_consultation_button', 'label' => 'Hero consultation button', 'type' => 'text'],
+                        ['key' => 'blog.hero_consultation_button', 'label' => 'Hero Book Consultation button text', 'type' => 'text'],
                         ['key' => 'blog.topics_section_label', 'label' => 'Topics section accessibility label', 'type' => 'text'],
                         ['key' => 'blog.topics_group_label', 'label' => 'Topics filter accessibility label', 'type' => 'text'],
                         ['key' => 'blog.topic_all', 'label' => 'All topics button', 'type' => 'text'],
@@ -1149,7 +1147,7 @@ return [
                         ['key' => 'blog.article_cta_title', 'label' => 'Article call-to-action heading', 'type' => 'text'],
                         ['key' => 'blog.article_cta_description', 'label' => 'Article call-to-action text', 'type' => 'textarea'],
                         ['key' => 'blog.article_cta_image', 'label' => 'Article call-to-action image', 'type' => 'image'],
-                        ['key' => 'blog.article_cta_primary_button', 'label' => 'Article consultation button', 'type' => 'text'],
+                        ['key' => 'blog.article_cta_primary_button', 'label' => 'Article Book Consultation button text', 'type' => 'text'],
                         ['key' => 'blog.article_cta_secondary_button', 'label' => 'Article site visit button', 'type' => 'text'],
                     ],
                 ],
@@ -1168,7 +1166,7 @@ return [
                     ['key' => 'about.hero_image', 'label' => 'Hero image', 'type' => 'image'],
                     ['key' => 'about.hero_image_alt', 'label' => 'Hero image description', 'type' => 'text'],
                     ['key' => 'about.hero_solutions_button', 'label' => 'Explore solutions button', 'type' => 'text'],
-                    ['key' => 'about.hero_consultation_button', 'label' => 'Consultation button', 'type' => 'text'],
+                    ['key' => 'about.hero_consultation_button', 'label' => 'Book Consultation button text', 'type' => 'text'],
                 ]],
                 ['label' => 'Our Story', 'fields' => [
                     ['key' => 'about.intro_title', 'label' => 'Introduction heading', 'type' => 'text'],
@@ -1206,7 +1204,7 @@ return [
                     ['key' => 'contact.hero_description', 'label' => 'Hero introduction', 'type' => 'textarea'],
                     ['key' => 'contact.hero_image', 'label' => 'Hero image', 'type' => 'image'],
                     ['key' => 'contact.hero_image_description', 'label' => 'Hero image description', 'type' => 'text'],
-                    ['key' => 'contact.hero_primary_button', 'label' => 'Hero consultation button', 'type' => 'text'],
+                    ['key' => 'contact.hero_primary_button', 'label' => 'Hero Book Consultation button text', 'type' => 'text'],
                     ['key' => 'contact.hero_secondary_button', 'label' => 'Hero brochure button', 'type' => 'text'],
                 ]],
                 ['label' => 'Brochure popup', 'fields' => [

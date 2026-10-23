@@ -13,7 +13,7 @@
             <p>{{ $cmsContent['about.hero_description'] ?? 'We believe technology should disappear into your home, enhancing your life without complicating it. Our mission is to blend invisible intelligence with premium luxury.' }}</p>
             <div class="about-hero__actions">
                 <a class="btn site-navbar__cta" href="{{ route('solutions') }}">{{ $cmsContent['about.hero_solutions_button'] ?? 'Explore Solutions' }}</a>
-                <a class="btn about-hero__secondary" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn about-hero__secondary" href="{{ route('contact') }}#contact-form">{{ $cmsContent['about.hero_consultation_button'] ?? 'Book Consultation' }}</a>
             </div>
         </div>
     </section>

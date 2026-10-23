@@ -55,7 +55,7 @@
             <h2>{{ $cmsContent['blog.article_cta_title'] ?? 'Ready to Experience Intelligent Living?' }}</h2>
             <p>{{ $cmsContent['blog.article_cta_description'] ?? 'Whether you’re building a new home or upgrading your existing space, Smart Illam is here to help you embrace the future of connected living.' }}</p>
             <div>
-                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">{{ $cmsContent['blog.article_cta_primary_button'] ?? 'Book Consultation' }}</a>
                 <a class="article-cta__secondary" href="{{ route('contact') }}">{{ $cmsContent['blog.article_cta_secondary_button'] ?? 'Request a Site Visit' }}</a>
             </div>
         </div>

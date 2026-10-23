@@ -11,7 +11,7 @@
             <h1 id="contact-hero-title">{{ $cmsContent['contact.hero_title'] ?? 'Let’s Build Your Smart Home' }}</h1>
             <p>{{ $cmsContent['contact.hero_description'] ?? 'Have questions about smart home automation, security, or connected living? Our team is here to help you find the right solution for your home or business.' }}</p>
             <div class="contact-hero__actions">
-                <a class="btn site-navbar__cta" href="#contact-form">Book Consultation</a>
+                <a class="btn site-navbar__cta" href="#contact-form">{{ $cmsContent['contact.hero_primary_button'] ?? 'Book Consultation' }}</a>
                 <button class="contact-hero__secondary" type="button" data-brochure-open>{{ $cmsContent['contact.hero_secondary_button'] ?? 'Get Brochure' }}</button>
             </div>
         </div>

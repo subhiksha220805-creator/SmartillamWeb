@@ -45,8 +45,8 @@
                     <li class="nav-item"><a class="nav-link{{ request()->routeIs('about') ? ' active' : '' }}" href="{{ route('about') }}" @if (request()->routeIs('about')) aria-current="page" @endif>{{ $cmsContent['home.nav_about'] ?? 'About' }}</a></li>
                     <li class="nav-item"><a class="nav-link{{ request()->routeIs('contact') ? ' active' : '' }}" href="{{ route('contact') }}" @if (request()->routeIs('contact')) aria-current="page" @endif>{{ $cmsContent['home.nav_contact'] ?? 'Contact' }}</a></li>
                 </ul>
-                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">Book Consultation</a>
-                <a class="admin-entry-button" href="{{ route('admin.login') }}">Admin</a>
+                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">{{ $cmsContent['home.nav_consultation'] ?? 'Book Consultation' }}</a>
+                <a class="admin-entry-button" href="{{ route('admin.login') }}">{{ $cmsContent['home.nav_admin'] ?? 'Admin' }}</a>
             </div>
         </div>
     </nav>

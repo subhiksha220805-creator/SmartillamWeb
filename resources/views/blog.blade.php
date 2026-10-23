@@ -13,7 +13,7 @@
             <p>{{ $cmsContent['blog.hero_description'] ?? 'Discover expert insights, practical guides, and the latest innovations in smart home technology. From intelligent automation and advanced security to energy-efficient living, our articles help you make informed decisions for a smarter lifestyle.' }}</p>
             <div class="blog-hero__actions">
                 <a class="btn site-navbar__cta" href="#latest-articles">{{ $cmsContent['blog.hero_articles_button'] ?? 'Explore Articles' }}</a>
-                <a class="btn blog-hero__secondary" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn blog-hero__secondary" href="{{ route('contact') }}#contact-form">{{ $cmsContent['blog.hero_consultation_button'] ?? 'Book Consultation' }}</a>
             </div>
         </div>
     </section>

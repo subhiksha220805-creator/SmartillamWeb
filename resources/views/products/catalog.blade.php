@@ -54,7 +54,7 @@
             <h1 id="catalog-heading">{{ $productHeroTitle }}</h1>
             <p>{{ $productHeroDescription }}</p>
             <div class="catalog-hero__actions">
-                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">{{ $productCms('hero_primary_button', 'Book Consultation') }}</a>
                 <a class="btn catalog-hero__secondary" href="#solutions">{{ $productCms('hero_secondary_button', 'Explore Services') }}</a>
             </div>
         </div>
@@ -796,7 +796,7 @@
         <div class="container consultation-content">
             <h2 id="consultation-heading">{{ $productCms('consultation_heading', 'Make Your Home Respond To You') }}</h2>
             <div>
-                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">{{ $productCms('consultation_primary_button', 'Book Consultation') }}</a>
                 <a class="btn consultation-secondary" href="mailto:info@smartillam.in">{{ $productCms('consultation_secondary_button', 'Request a Site Visit') }}</a>
             </div>
         </div>

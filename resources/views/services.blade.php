@@ -48,7 +48,7 @@
             <h1 id="services-hero-title">{!! nl2br(e($cmsContent['services.hero_title'] ?? "Complete Smart Home Services\nFrom Design to Lifetime Support")) !!}</h1>
             <p>{{ $cmsContent['services.hero_description'] ?? 'We create bespoke automation ecosystems that blend seamlessly into your home or office, providing effortless control and unparalleled luxury.' }}</p>
             <div class="services-hero__actions">
-                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">{{ $cmsContent['services.hero_primary_button'] ?? 'Book Consultation' }}</a>
                 <a class="services-outline-button" href="#specialties">{{ $cmsContent['services.hero_secondary_button'] ?? 'Explore Services' }}</a>
             </div>
         </div>
@@ -168,7 +168,7 @@
         <div class="container services-final-cta__content">
             <h2 id="services-final-cta-title">{!! nl2br(e($cmsContent['services.final_cta_title'] ?? "Let’s Create a Home That\nWorks Smarter.")) !!}</h2>
             <div class="services-final-cta__actions">
-                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">Book Consultation</a>
+                <a class="btn site-navbar__cta" href="{{ route('contact') }}#contact-form">{{ $cmsContent['services.final_cta_primary_button'] ?? 'Book Consultation' }}</a>
                 <a class="services-outline-button" href="{{ route('contact') }}">{{ $cmsContent['services.final_cta_secondary_button'] ?? 'Request a Site Visit' }}</a>
             </div>
         </div>
