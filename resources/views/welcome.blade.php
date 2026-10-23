@@ -4,16 +4,6 @@
 @section('body-class', 'home-page')
 
 @section('content')
-    <div class="home-curtain-reveal" aria-hidden="true">
-        <div class="home-curtain-reveal__panel home-curtain-reveal__panel--left">
-            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--outer"></span>
-            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--inner"></span>
-        </div>
-        <div class="home-curtain-reveal__panel home-curtain-reveal__panel--right">
-            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--inner"></span>
-            <span class="home-curtain-reveal__swag home-curtain-reveal__swag--outer"></span>
-        </div>
-    </div>
     @php
         $homeDefaults = array_filter(
             config('cms.defaults', []),
@@ -82,37 +72,13 @@
             <h2 id="virtual-demo-title">{{ $cmsContent['home.demo_title'] ?? 'Try a Virtual Demo' }}</h2>
             <p>{{ $cmsContent['home.demo_description'] ?? 'Explore how connected controls can make everyday living more comfortable and convenient.' }}</p>
         </div>
-        <div class="home-demo-visuals">
-            <img class="home-demo-visuals__phone" src="{{ $homeImageUrlFor('home.demo_mobile_image', 'images/home/home-virtual-demo-mobile.svg') }}" alt="{{ $homeContent['home.demo_mobile_image_alt'] ?? 'Smart Illam mobile app showing living room climate, lighting, blinds and appliance controls' }}" loading="lazy">
-            <img class="home-demo-visuals__house" src="{{ $homeImageUrlFor('home.demo_house_image', 'images/home/home-virtual-demo-house.svg') }}" alt="{{ $homeContent['home.demo_house_image_alt'] ?? 'Modern illuminated smart home at night' }}" loading="lazy">
-            <div class="home-demo-live" data-home-demo data-demo-image-base="{{ asset('images/home/virtual-demo') }}">
-                <div class="home-demo-live__phone" aria-label="Interactive Smart Illam home control app">
-                    <div class="home-demo-live__screen">
-                        <div class="home-demo-live__notch" aria-hidden="true"></div>
-                        <div class="home-demo-live__phone-top"><span>9:41</span><span aria-hidden="true">● ● ●</span></div>
-                        <div class="home-demo-live__hero">
-                            <p>Welcome home</p>
-                            <h3>Living Room</h3>
-                            <div class="home-demo-live__metrics"><span><b>24°</b><small>TEMP</small></span><span><b>52%</b><small>HUM</small></span><span><b>94</b><small>AQI</small></span></div>
-                        </div>
-                        <div class="home-demo-live__content">
-                            <p class="home-demo-live__summary"><span data-demo-count>2</span> of 5 lights on <b data-demo-mood>Cozy evening</b></p>
-                            <div class="home-demo-live__lights">
-                                <button class="home-demo-live__light" type="button" data-demo-room="living" aria-pressed="true"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Living Room</b><small>On</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
-                                <button class="home-demo-live__light" type="button" data-demo-room="hall" aria-pressed="true"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Hall</b><small>On</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
-                                <button class="home-demo-live__light" type="button" data-demo-room="bedroom" aria-pressed="false"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Bedroom</b><small>Off</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
-                                <button class="home-demo-live__light" type="button" data-demo-room="parking" aria-pressed="false"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Car Parking</b><small>Off</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
-                                <button class="home-demo-live__light" type="button" data-demo-room="garden" aria-pressed="false"><span class="home-demo-live__icon" aria-hidden="true">☼</span><span><b>Garden</b><small>Off</small></span><span class="home-demo-live__switch" aria-hidden="true"><i></i></span></button>
-                            </div>
-                            <button class="home-demo-live__master" type="button" data-demo-master>Turn all lights on</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="home-demo-live__scene">
-                    <img src="{{ asset('images/home/virtual-demo/living-kitchen-lit.webp') }}" alt="Smart home with the living room and hall lights on" data-demo-house>
-                    <p class="visually-hidden" aria-live="polite" data-demo-status>Tap a room switch to control its lights.</p>
-                </div>
-            </div>
+        <div class="home-demo-embed">
+            <iframe
+                src="{{ asset('smart-luxury-villa.html') }}"
+                title="Interactive Smart Luxury Villa virtual demo"
+                allow="microphone"
+                loading="lazy"
+            ></iframe>
         </div>
     </section>
 
